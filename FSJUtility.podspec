@@ -31,7 +31,8 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '8.0'
 
   #s.source_files = 'FSJUtility/Classes/**/*'
-  s.source_files = 'FSJUtility/Libs/**/*.{m,h}'
+  # 从podspec同级目录开始
+  s.source_files = 'Libs/**/*.{m,h}'
   
   # s.resource_bundles = {
   #   'FSJUtility' => ['FSJUtility/Assets/*.png']
