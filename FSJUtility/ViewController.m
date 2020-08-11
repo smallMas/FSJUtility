@@ -17,6 +17,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSString *string = @"我们是中国人,mydkalkdk";
+    NSInteger count = [string fsj_numberOfBytes];
+    NSLog(@"count : %ld",(long)count);
+    
+    NSString *str = [string fsj_stringAtIndexWithByteCount:5];
+    NSLog(@"str >>> %@",str);
+    str = [string fsj_stringAtIndexWithByteCount:10];
+    NSLog(@"str >>> %@",str);
+    str = [string fsj_stringAtIndexWithByteCount:11];
+    NSLog(@"str >>> %@",str);
+    str = [string fsj_stringAtIndexWithByteCount:12];
+    NSLog(@"str >>> %@",str);
+    str = [string fsj_stringAtIndexWithByteCount:15];
+    NSLog(@"str >>> %@",str);
 }
 
 

@@ -269,4 +269,65 @@
     return text;
 }
 
+#pragma mark - 字符串处理
+/// 获取字符串的字节数
+- (NSInteger)fsj_numberOfBytes {
+    NSUInteger asciiLength = 0;
+    for (NSUInteger i = 0; i < self.length; i++) {
+        unichar uc = [self characterAtIndex: i];
+        asciiLength += isascii(uc) ? 1 : 2;
+    }
+    
+    NSUInteger unicodeLength = asciiLength;
+    return unicodeLength;
+}
+
+//按字节数截取字符串
+- (NSString *)fsj_stringAtIndexWithByteCount:(NSInteger)count {
+    int i;
+    int sum=0;
+    for(i=0;i<[self length];i++)
+    {
+        unichar str = [self characterAtIndex:i];
+        if(str < 256){
+            sum+=1;
+        }
+        else {
+            sum+=2;
+        }
+        if(sum>count){
+//当字符大于count时，剪取三个位置，显示省略号。否则正常显示
+            NSString * str=[self substringWithRange:NSMakeRange(0,[self fsj_charAtIndexWithByteCount:count])];
+                                                                 
+            return str;
+        }
+    }
+    return self;
+}
+
+- (NSInteger)fsj_charAtIndexWithByteCount:(NSInteger)count {
+    int i;
+    int sum=0;
+    int count2=0;
+    for(i=0;i<[self length];i++)
+    {
+        unichar str = [self characterAtIndex:i];
+        if(str < 256){
+            sum+=1;
+        }
+        else {
+            sum+=2;
+        }
+        count2++;
+        if (sum>=count){
+            break;
+        }
+    }
+    if(sum>count){
+        return count2-1;
+    }
+    else
+    return count2;
+}
+
 @end

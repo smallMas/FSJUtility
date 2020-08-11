@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E9922D3224DD095500F2D197 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9922D3124DD095500F2D197 /* AppDelegate.m */; };
-		E9922D3524DD095500F2D197 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9922D3424DD095500F2D197 /* SceneDelegate.m */; };
 		E9922D3824DD095500F2D197 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9922D3724DD095500F2D197 /* ViewController.m */; };
 		E9922D3B24DD095500F2D197 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9922D3924DD095500F2D197 /* Main.storyboard */; };
 		E9922D3E24DD095500F2D197 /* FSJUtility.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9922D3C24DD095500F2D197 /* FSJUtility.xcdatamodeld */; };
@@ -31,6 +30,7 @@
 		E9922DB424DD388700F2D197 /* FSJUtility.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E9922DB124DD388700F2D197 /* FSJUtility.podspec */; };
 		E9922DB524DD388700F2D197 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E9922DB224DD388700F2D197 /* LICENSE */; };
 		E9922DB624DD388700F2D197 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E9922DB324DD388700F2D197 /* README.md */; };
+		E998954324E28B1D00946D6E /* FSJUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E998954224E28B1D00946D6E /* FSJUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +54,6 @@
 		E9922D2D24DD095500F2D197 /* FSJUtility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSJUtility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9922D3024DD095500F2D197 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E9922D3124DD095500F2D197 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E9922D3324DD095500F2D197 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		E9922D3424DD095500F2D197 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		E9922D3624DD095500F2D197 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E9922D3724DD095500F2D197 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E9922D3A24DD095500F2D197 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,10 +90,13 @@
 		E9922DA224DD385700F2D197 /* UIView+FSJUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FSJUtility.m"; sourceTree = "<group>"; };
 		E9922DA324DD385700F2D197 /* UIViewController+FSJUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FSJUtility.h"; sourceTree = "<group>"; };
 		E9922DA424DD385700F2D197 /* UIViewController+FSJUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FSJUtility.m"; sourceTree = "<group>"; };
-		E9922DB124DD388700F2D197 /* FSJUtility.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = FSJUtility.podspec; sourceTree = SOURCE_ROOT; };
+		E9922DB124DD388700F2D197 /* FSJUtility.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FSJUtility.podspec; sourceTree = SOURCE_ROOT; };
 		E9922DB224DD388700F2D197 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		E9922DB324DD388700F2D197 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		E9922DB724DD394600F2D197 /* FSJUtilityGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSJUtilityGlobal.h; sourceTree = "<group>"; };
+		E998953F24E27A1300946D6E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		E998954124E28B1D00946D6E /* FSJUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSJUtility.h; sourceTree = "<group>"; };
+		E998954224E28B1D00946D6E /* FSJUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSJUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +151,6 @@
 				E9922D8C24DD385700F2D197 /* Libs */,
 				E9922D3024DD095500F2D197 /* AppDelegate.h */,
 				E9922D3124DD095500F2D197 /* AppDelegate.m */,
-				E9922D3324DD095500F2D197 /* SceneDelegate.h */,
-				E9922D3424DD095500F2D197 /* SceneDelegate.m */,
 				E9922D3624DD095500F2D197 /* ViewController.h */,
 				E9922D3724DD095500F2D197 /* ViewController.m */,
 				E9922D3924DD095500F2D197 /* Main.storyboard */,
@@ -160,6 +159,7 @@
 				E9922D4424DD095B00F2D197 /* Info.plist */,
 				E9922D4524DD095B00F2D197 /* main.m */,
 				E9922D3C24DD095500F2D197 /* FSJUtility.xcdatamodeld */,
+				E998953F24E27A1300946D6E /* PrefixHeader.pch */,
 			);
 			path = FSJUtility;
 			sourceTree = "<group>";
@@ -185,6 +185,7 @@
 		E9922D8C24DD385700F2D197 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				E998954024E28AF500946D6E /* Utility */,
 				E9922D8D24DD385700F2D197 /* NSUtility */,
 				E9922D9824DD385700F2D197 /* UIUtility */,
 				E9922DB724DD394600F2D197 /* FSJUtilityGlobal.h */,
@@ -236,6 +237,15 @@
 				E9922DB324DD388700F2D197 /* README.md */,
 			);
 			path = PodspecMetadata;
+			sourceTree = "<group>";
+		};
+		E998954024E28AF500946D6E /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				E998954124E28B1D00946D6E /* FSJUtility.h */,
+				E998954224E28B1D00946D6E /* FSJUtility.m */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,8 +394,8 @@
 				E9922DA524DD385700F2D197 /* NSArray+FSJUtility.m in Sources */,
 				E9922D3E24DD095500F2D197 /* FSJUtility.xcdatamodeld in Sources */,
 				E9922DAE24DD385700F2D197 /* UIView+FSJUtility.m in Sources */,
-				E9922D3524DD095500F2D197 /* SceneDelegate.m in Sources */,
 				E9922DAB24DD385700F2D197 /* UIColor+FSJUtility.m in Sources */,
+				E998954324E28B1D00946D6E /* FSJUtility.m in Sources */,
 				E9922DA924DD385700F2D197 /* NSTimer+FSJUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,12 +566,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 334V4U3KT6;
+				GCC_PREFIX_HEADER = FSJUtility/PrefixHeader.pch;
 				INFOPLIST_FILE = FSJUtility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.FSJUtility;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dnaer.english;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -572,12 +584,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 334V4U3KT6;
+				GCC_PREFIX_HEADER = FSJUtility/PrefixHeader.pch;
 				INFOPLIST_FILE = FSJUtility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.FSJUtility;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dnaer.english;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

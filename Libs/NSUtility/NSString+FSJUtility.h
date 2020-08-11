@@ -71,6 +71,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 去掉字符串两端的空格及回车
 - (NSString *)fsj_removeSpaceAndNewAtBothEndsLine;
 
+#pragma mark - 字符串处理
+/// 获取字符串的字节数
+- (NSInteger)fsj_numberOfBytes;
+//按字节数截取字符串
+- (NSString *)fsj_stringAtIndexWithByteCount:(NSInteger)count;
 
 @end
 
