@@ -6,6 +6,9 @@
 //  Copyright © 2020 燕来秋. All rights reserved.
 //
 
+// Macro
+#import "FSJFrameMacro.h"
+
 // NS扩展
 #import "NSArray+FSJUtility.h"
 #import "NSDictionary+FSJUtility.h"
@@ -19,6 +22,11 @@
 #import "UILabel+FSJUtility.h"
 #import "UIView+FSJUtility.h"
 #import "UIViewController+FSJUtility.h"
+#import "UIApplication+FSJUtility.h"
 
 // 工具
 #import "FSJUtility.h"
+#import "FSJAlertSheetView.h"
+
+// 自定义view
+#import "FSJPopBottomContainerView.h"

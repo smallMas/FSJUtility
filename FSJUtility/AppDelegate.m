@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "FSJMainViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,8 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    ViewController *vc = [ViewController new];
-    self.window.rootViewController = vc;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[FSJMainViewController new]];
+    self.window.rootViewController = nav;
     return YES;
 }
 
