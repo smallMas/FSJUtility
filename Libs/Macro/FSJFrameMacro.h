@@ -30,8 +30,8 @@
 #define FSJSCREENHEIGHT [[UIScreen mainScreen] bounds].size.height
 #define FSJAppStatusHeight [[UIApplication sharedApplication] statusBarFrame].size.height
 #define FSJAppNavBarHeight 44
-#define App_SafeTop_H ((kfsj_iPhoneX == YES || kfsj_iPhoneXr == YES || kfsj_iPhoneXs == YES || kfsj_iPhoneXsMax == YES) ? 44.0 : App_Status_H)
-#define App_SafeBottom_H ((kfsj_iPhoneX == YES || kfsj_iPhoneXr == YES || kfsj_iPhoneXs == YES || kfsj_iPhoneXsMax == YES) ? 34.0 : 0.0)
+#define FSJAppSafeTopH ((kfsj_iPhoneX == YES || kfsj_iPhoneXr == YES || kfsj_iPhoneXs == YES || kfsj_iPhoneXsMax == YES) ? 44.0 : App_Status_H)
+#define FSJAppSafeBottomH ((kfsj_iPhoneX == YES || kfsj_iPhoneXr == YES || kfsj_iPhoneXs == YES || kfsj_iPhoneXsMax == YES) ? 34.0 : 0.0)
 
 
 #define fsj_weakify(object) autoreleasepool   {} __weak  typeof(object) weak##object = object;
