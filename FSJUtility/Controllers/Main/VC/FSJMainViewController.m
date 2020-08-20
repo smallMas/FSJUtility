@@ -10,10 +10,12 @@
 #import "FSJMenuModel.h"
 #import "FSJPopBottomContainerView.h"
 #import "FSJMenuTableView.h"
+#import "TestTabContainViewController.h"
 
 typedef NS_ENUM(NSInteger, FSJMenuType) {
     FSJMenuTypeTestString,
-    FSJMenuTypeTestBottom
+    FSJMenuTypeTestBottom,
+    FSJMenuTypeTestTabContain,
 };
 
 @interface FSJMainViewController ()
@@ -44,6 +46,10 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
             case FSJMenuTypeTestBottom:
                 [self testBottom];
                 break;
+                
+            case FSJMenuTypeTestTabContain:
+                [self testTabContain];
+                break;
             default:
                 break;
         }
@@ -53,6 +59,7 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
 - (void)setupData {
     [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestString]];
     [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestBottom]];
+    [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestTabContain]];
 }
 
 - (FSJMenuModel *)createMenuType:(FSJMenuType)type {
@@ -64,7 +71,9 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
         case FSJMenuTypeTestBottom:
             text = @"测试底部弹框";
             break;
-            
+        case FSJMenuTypeTestTabContain:
+            text = @"测试TabContain";
+            break;
         default:
             break;
     }
@@ -126,6 +135,11 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
     };
     FSJPopBottomContainerView *bottomView = [[FSJPopBottomContainerView alloc] initWithSuperView:self.view withView:view];
     [bottomView show:YES];
+}
+
+- (void)testTabContain {
+    TestTabContainViewController *vc = [TestTabContainViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

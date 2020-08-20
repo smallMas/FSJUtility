@@ -43,6 +43,11 @@
 		E998956C24E4E37800946D6E /* FSJMenuTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E998956B24E4E37800946D6E /* FSJMenuTableView.m */; };
 		E998956F24E4ECEF00946D6E /* FSJAlertSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = E998956E24E4ECEF00946D6E /* FSJAlertSheetView.m */; };
 		E998957224E4EF5800946D6E /* UIApplication+FSJUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E998957124E4EF5800946D6E /* UIApplication+FSJUtility.m */; };
+		E9F1DD8B24EE5E530099947C /* FSJTabContainView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F1DD8A24EE5E530099947C /* FSJTabContainView.m */; };
+		E9F1DD9024EE627A0099947C /* TestTabContainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F1DD8F24EE627A0099947C /* TestTabContainViewController.m */; };
+		E9F1DD9324EE63D70099947C /* FSJTabMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F1DD9224EE63D70099947C /* FSJTabMenuView.m */; };
+		E9F1DD9624EE65260099947C /* FSJCycleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F1DD9524EE65260099947C /* FSJCycleLayout.m */; };
+		E9F1DD9924EE66B50099947C /* FSJTabMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F1DD9824EE66B50099947C /* FSJTabMenuCell.m */; };
 		F7E533F6A271AB77F0773F0F /* Pods_FSJUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F3CD3478962B6D56741F846 /* Pods_FSJUtility.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +144,16 @@
 		E998956E24E4ECEF00946D6E /* FSJAlertSheetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSJAlertSheetView.m; sourceTree = "<group>"; };
 		E998957024E4EF5800946D6E /* UIApplication+FSJUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+FSJUtility.h"; sourceTree = "<group>"; };
 		E998957124E4EF5800946D6E /* UIApplication+FSJUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+FSJUtility.m"; sourceTree = "<group>"; };
+		E9F1DD8924EE5E530099947C /* FSJTabContainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSJTabContainView.h; sourceTree = "<group>"; };
+		E9F1DD8A24EE5E530099947C /* FSJTabContainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSJTabContainView.m; sourceTree = "<group>"; };
+		E9F1DD8E24EE627A0099947C /* TestTabContainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTabContainViewController.h; sourceTree = "<group>"; };
+		E9F1DD8F24EE627A0099947C /* TestTabContainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTabContainViewController.m; sourceTree = "<group>"; };
+		E9F1DD9124EE63D70099947C /* FSJTabMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSJTabMenuView.h; sourceTree = "<group>"; };
+		E9F1DD9224EE63D70099947C /* FSJTabMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSJTabMenuView.m; sourceTree = "<group>"; };
+		E9F1DD9424EE65260099947C /* FSJCycleLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSJCycleLayout.h; sourceTree = "<group>"; };
+		E9F1DD9524EE65260099947C /* FSJCycleLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSJCycleLayout.m; sourceTree = "<group>"; };
+		E9F1DD9724EE66B50099947C /* FSJTabMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSJTabMenuCell.h; sourceTree = "<group>"; };
+		E9F1DD9824EE66B50099947C /* FSJTabMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSJTabMenuCell.m; sourceTree = "<group>"; };
 		FBA6C6E3F9CAA6DA09FAA9A2 /* Pods-FSJUtility-FSJUtilityUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSJUtility-FSJUtilityUITests.debug.xcconfig"; path = "Target Support Files/Pods-FSJUtility-FSJUtilityUITests/Pods-FSJUtility-FSJUtilityUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -329,6 +344,7 @@
 		E998954724E3F39C00946D6E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E9F1DD8C24EE624F0099947C /* TestTabContain */,
 				E998955224E3F44A00946D6E /* Base */,
 				E998954B24E3F43300946D6E /* Main */,
 			);
@@ -389,6 +405,7 @@
 		E998956224E3FA8C00946D6E /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				E9F1DD8824EE5E1F0099947C /* FSJTabContain */,
 				E998956324E3FBEB00946D6E /* PopBottom */,
 			);
 			path = CustomView;
@@ -418,6 +435,38 @@
 				E998956B24E4E37800946D6E /* FSJMenuTableView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E9F1DD8824EE5E1F0099947C /* FSJTabContain */ = {
+			isa = PBXGroup;
+			children = (
+				E9F1DD8924EE5E530099947C /* FSJTabContainView.h */,
+				E9F1DD8A24EE5E530099947C /* FSJTabContainView.m */,
+				E9F1DD9124EE63D70099947C /* FSJTabMenuView.h */,
+				E9F1DD9224EE63D70099947C /* FSJTabMenuView.m */,
+				E9F1DD9424EE65260099947C /* FSJCycleLayout.h */,
+				E9F1DD9524EE65260099947C /* FSJCycleLayout.m */,
+				E9F1DD9724EE66B50099947C /* FSJTabMenuCell.h */,
+				E9F1DD9824EE66B50099947C /* FSJTabMenuCell.m */,
+			);
+			path = FSJTabContain;
+			sourceTree = "<group>";
+		};
+		E9F1DD8C24EE624F0099947C /* TestTabContain */ = {
+			isa = PBXGroup;
+			children = (
+				E9F1DD8D24EE624F0099947C /* VC */,
+			);
+			path = TestTabContain;
+			sourceTree = "<group>";
+		};
+		E9F1DD8D24EE624F0099947C /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				E9F1DD8E24EE627A0099947C /* TestTabContainViewController.h */,
+				E9F1DD8F24EE627A0099947C /* TestTabContainViewController.m */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -661,6 +710,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9F1DD9924EE66B50099947C /* FSJTabMenuCell.m in Sources */,
 				E998956F24E4ECEF00946D6E /* FSJAlertSheetView.m in Sources */,
 				E998956C24E4E37800946D6E /* FSJMenuTableView.m in Sources */,
 				E998955B24E3F56400946D6E /* FSJBaseModel.m in Sources */,
@@ -675,6 +725,7 @@
 				E9922DAA24DD385700F2D197 /* UIButton+FSJUtility.m in Sources */,
 				E998955124E3F43300946D6E /* FSJMainViewController.m in Sources */,
 				E998955E24E3F5DD00946D6E /* FSJMenuModel.m in Sources */,
+				E9F1DD9624EE65260099947C /* FSJCycleLayout.m in Sources */,
 				E998956124E3F69100946D6E /* FSJMenuTableCell.m in Sources */,
 				E9922DAF24DD385700F2D197 /* UIViewController+FSJUtility.m in Sources */,
 				E9922DA824DD385700F2D197 /* NSString+FSJUtility.m in Sources */,
@@ -684,9 +735,12 @@
 				E9922DAE24DD385700F2D197 /* UIView+FSJUtility.m in Sources */,
 				E998955524E3F46E00946D6E /* FSJBaseController.m in Sources */,
 				E9922DAB24DD385700F2D197 /* UIColor+FSJUtility.m in Sources */,
+				E9F1DD8B24EE5E530099947C /* FSJTabContainView.m in Sources */,
 				E998956624E3FC2400946D6E /* FSJPopBottomContainerView.m in Sources */,
 				E998954324E28B1D00946D6E /* FSJUtility.m in Sources */,
+				E9F1DD9324EE63D70099947C /* FSJTabMenuView.m in Sources */,
 				E9922DA924DD385700F2D197 /* NSTimer+FSJUtility.m in Sources */,
+				E9F1DD9024EE627A0099947C /* TestTabContainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
