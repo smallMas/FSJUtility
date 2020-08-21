@@ -70,6 +70,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)fsj_filterHTML;
 /// 去掉字符串两端的空格及回车
 - (NSString *)fsj_removeSpaceAndNewAtBothEndsLine;
+/// 匹配链接字符串
+- (NSArray *)fsj_matchUrl;
 
 #pragma mark - 字符串处理
 /// 获取字符串的字节数

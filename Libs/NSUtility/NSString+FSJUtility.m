@@ -269,6 +269,28 @@
     return text;
 }
 
+/// 匹配链接字符串
+- (NSArray *)fsj_matchUrl {
+    NSError *error;
+    //可以识别url的正则表达式
+    NSString * regulaStr = @"([hH][tT]{2}[pP]://|[hH][tT]{2}[pP][sS]://|[wW]{3}.|[wW][aA][pP].|[fF][tT][pP].)[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]";
+//    NSString *regulaStr = @"((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)|(www.[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)";
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regulaStr
+                                                                           options:NSRegularExpressionCaseInsensitive
+                                                                             error:&error];
+    NSArray *arrayOfAllMatches = [regex matchesInString:self
+                                                options:0
+                                                  range:NSMakeRange(0, [self length])];
+    //NSString *subStr;
+    NSMutableArray *arr = [NSMutableArray array];
+    for (NSTextCheckingResult *match in arrayOfAllMatches){
+        NSString* substringForMatch;
+        substringForMatch = [self substringWithRange:match.range];
+        [arr addObject:substringForMatch];
+    }
+    return arr;
+}
+
 #pragma mark - 字符串处理
 /// 获取字符串的字节数
 - (NSInteger)fsj_numberOfBytes {

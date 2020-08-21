@@ -111,6 +111,10 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
     NSLog(@"str >>> %@",str);
     str = [string fsj_stringAtIndexWithByteCount:15];
     NSLog(@"str >>> %@",str);
+    
+    string = @"我们的百度http://www.baidu.com棒棒的";
+    NSArray *arr = [string fsj_matchUrl];
+    NSLog(@"arr >>> %@",arr);
 }
 
 - (void)testBottom {
