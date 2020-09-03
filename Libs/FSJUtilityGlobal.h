@@ -29,7 +29,6 @@
 // 工具
 #import "FSJUtility.h"
 #import "FSJAlertSheetView.h"
-#import "FSJIPAddressUtility.h"
 
 // 自定义view
 #import "FSJPopBottomContainerView.h"

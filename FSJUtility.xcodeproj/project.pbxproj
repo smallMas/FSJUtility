@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BCC961C777548CA02F45CE5E /* Pods_FSJUtility_FSJUtilityUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD1D022B0D1C83021C5E877 /* Pods_FSJUtility_FSJUtilityUITests.framework */; };
 		C0BBA7C50F97CA3A9B193F65 /* Pods_FSJUtilityTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7DBAC22394FBC1EC46A88B /* Pods_FSJUtilityTests.framework */; };
-		E933346A24FF738700748E2B /* FSJIPAddressUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E933346924FF738700748E2B /* FSJIPAddressUtility.m */; };
 		E93334BE25007E8D00748E2B /* TestClickAreaController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93334BD25007E8D00748E2B /* TestClickAreaController.m */; };
 		E97729EA250085E90043339C /* FSJTapAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = E97729E9250085E90043339C /* FSJTapAreaView.m */; };
 		E97729F3250088F00043339C /* UIControl+FSJEffectiveArea.m in Sources */ = {isa = PBXBuildFile; fileRef = E97729F2250088F00043339C /* UIControl+FSJEffectiveArea.m */; };
@@ -82,8 +81,6 @@
 		7710AD609B85669FA1C3972A /* Pods-FSJUtility-FSJUtilityUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSJUtility-FSJUtilityUITests.release.xcconfig"; path = "Target Support Files/Pods-FSJUtility-FSJUtilityUITests/Pods-FSJUtility-FSJUtilityUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7F3CD3478962B6D56741F846 /* Pods_FSJUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSJUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8360AB2835F9317EF851AD83 /* Pods-FSJUtility.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSJUtility.release.xcconfig"; path = "Target Support Files/Pods-FSJUtility/Pods-FSJUtility.release.xcconfig"; sourceTree = "<group>"; };
-		E933346824FF738700748E2B /* FSJIPAddressUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSJIPAddressUtility.h; sourceTree = "<group>"; };
-		E933346924FF738700748E2B /* FSJIPAddressUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSJIPAddressUtility.m; sourceTree = "<group>"; };
 		E93334BC25007E8D00748E2B /* TestClickAreaController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestClickAreaController.h; sourceTree = "<group>"; };
 		E93334BD25007E8D00748E2B /* TestClickAreaController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestClickAreaController.m; sourceTree = "<group>"; };
 		E97729E8250085E90043339C /* FSJTapAreaView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSJTapAreaView.h; sourceTree = "<group>"; };
@@ -382,8 +379,6 @@
 				E998954224E28B1D00946D6E /* FSJUtility.m */,
 				E998956D24E4ECEF00946D6E /* FSJAlertSheetView.h */,
 				E998956E24E4ECEF00946D6E /* FSJAlertSheetView.m */,
-				E933346824FF738700748E2B /* FSJIPAddressUtility.h */,
-				E933346924FF738700748E2B /* FSJIPAddressUtility.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -773,7 +768,6 @@
 				E998955824E3F48B00946D6E /* FSJTableViewController.m in Sources */,
 				E9922D4624DD095B00F2D197 /* main.m in Sources */,
 				E998957224E4EF5800946D6E /* UIApplication+FSJUtility.m in Sources */,
-				E933346A24FF738700748E2B /* FSJIPAddressUtility.m in Sources */,
 				E9922DA624DD385700F2D197 /* NSDictionary+FSJUtility.m in Sources */,
 				E9922DA724DD385700F2D197 /* NSObject+FSJUtility.m in Sources */,
 				E93334BE25007E8D00748E2B /* TestClickAreaController.m in Sources */,

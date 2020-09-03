@@ -107,9 +107,6 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
     string = @"我们的百度http://www.baidu.com棒棒的";
     NSArray *arr = [string fsj_matchUrl];
     NSLog(@"arr >>> %@",arr);
-    
-    NSString *ip = [FSJIPAddressUtility getIPAddress:YES];
-    NSLog(@"ip >>>> %@",ip);
 }
 
 - (void)testBottom {
