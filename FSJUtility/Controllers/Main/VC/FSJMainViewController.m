@@ -10,12 +10,12 @@
 #import "FSJMenuModel.h"
 #import "FSJPopBottomContainerView.h"
 #import "FSJMenuTableView.h"
-#import "TestTabContainViewController.h"
 
 typedef NS_ENUM(NSInteger, FSJMenuType) {
     FSJMenuTypeTestString,
     FSJMenuTypeTestBottom,
     FSJMenuTypeTestTabContain,
+    FSJMenuTypeTestArea,
 };
 
 @interface FSJMainViewController ()
@@ -38,48 +38,40 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
     self.tableView.tableViewDidSelectRowBlock = ^(UITableView *tableView, NSIndexPath *indexPath, id itemData) {
         FSJ_STRONG_SELF
         FSJMenuModel *model = itemData;
-        switch (model.type) {
-            case FSJMenuTypeTestString:
-                [self testString];
-                break;
-                
-            case FSJMenuTypeTestBottom:
-                [self testBottom];
-                break;
-                
-            case FSJMenuTypeTestTabContain:
-                [self testTabContain];
-                break;
-            default:
-                break;
+        if (model.vcString) {
+            Class cls = NSClassFromString(model.vcString);
+            UIViewController *vc = [cls new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }else {
+            switch (model.type) {
+                case FSJMenuTypeTestString:
+                    [self testString];
+                    break;
+                    
+                case FSJMenuTypeTestBottom:
+                    [self testBottom];
+                    break;
+                    
+                default:
+                    break;
+            }
         }
     };
 }
 
 - (void)setupData {
-    [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestString]];
-    [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestBottom]];
-    [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestTabContain]];
+    [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestString title:@"测试字符串" clsString:nil]];
+    [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestBottom title:@"测试底部弹框" clsString:nil]];
+    [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestTabContain title:@"测试TabContain" clsString:@"TestTabContainViewController"]];
+    [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestArea title:@"测试view点击区域" clsString:@"TestClickAreaController"]];
 }
 
-- (FSJMenuModel *)createMenuType:(FSJMenuType)type {
-    NSString *text = @"";
-    switch (type) {
-        case FSJMenuTypeTestString:
-            text = @"测试字符串";
-            break;
-        case FSJMenuTypeTestBottom:
-            text = @"测试底部弹框";
-            break;
-        case FSJMenuTypeTestTabContain:
-            text = @"测试TabContain";
-            break;
-        default:
-            break;
-    }
+- (FSJMenuModel *)createMenuType:(FSJMenuType)type title:(NSString *)title clsString:(NSString *)clsString {
+    NSString *text = title;
     FSJMenuModel *model = [FSJMenuModel new];
     model.type = type;
     model.text = text;
+    model.vcString = clsString;
     return model;
 }
 
@@ -115,14 +107,17 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
     string = @"我们的百度http://www.baidu.com棒棒的";
     NSArray *arr = [string fsj_matchUrl];
     NSLog(@"arr >>> %@",arr);
+    
+    NSString *ip = [FSJIPAddressUtility getIPAddress:YES];
+    NSLog(@"ip >>>> %@",ip);
 }
 
 - (void)testBottom {
     FSJMenuTableView *view = [[FSJMenuTableView alloc] initWithFrame:CGRectMake(0, 0, self.view.fsj_width, 200)];
     [view setBgColor:[UIColor fsj_randomColor]];
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:[self createMenuType:FSJMenuTypeTestString]];
-    [array addObject:[self createMenuType:FSJMenuTypeTestBottom]];
+    [array addObject:[self createMenuType:FSJMenuTypeTestString title:@"test1" clsString:nil]];
+    [array addObject:[self createMenuType:FSJMenuTypeTestBottom title:@"test2" clsString:nil]];
     [view setDataArray:array];
     view.eventTransmissionBlock = ^id(id target, id params, NSInteger tag, CHGCallBack callBack) {
         [[NSNotificationCenter defaultCenter] postNotificationName:kFSJPopBottomCloseDoneNoAnimationPressed object:nil];
@@ -139,11 +134,6 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
     };
     FSJPopBottomContainerView *bottomView = [[FSJPopBottomContainerView alloc] initWithSuperView:self.view withView:view];
     [bottomView show:YES];
-}
-
-- (void)testTabContain {
-    TestTabContainViewController *vc = [TestTabContainViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

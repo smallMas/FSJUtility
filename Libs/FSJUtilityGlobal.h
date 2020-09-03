@@ -23,11 +23,15 @@
 #import "UIView+FSJUtility.h"
 #import "UIViewController+FSJUtility.h"
 #import "UIApplication+FSJUtility.h"
+#import "UIControl+FSJEffectiveArea.h"
+#import "UIImageView+FSJEffectiveArea.h"
 
 // 工具
 #import "FSJUtility.h"
 #import "FSJAlertSheetView.h"
+#import "FSJIPAddressUtility.h"
 
 // 自定义view
 #import "FSJPopBottomContainerView.h"
 #import "FSJTabContainView.h"
+#import "FSJTapAreaView.h"

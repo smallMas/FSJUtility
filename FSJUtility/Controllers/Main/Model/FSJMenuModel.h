@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FSJMenuModel : FSJBaseModel
 @property (nonatomic, assign) NSInteger type;
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSString *vcString;
 @end
 
 NS_ASSUME_NONNULL_END
