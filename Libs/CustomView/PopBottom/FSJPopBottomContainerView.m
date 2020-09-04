@@ -48,6 +48,14 @@ NSString * const kFSJPopBottomCloseDoneNoAnimationPressed = @"kFSJPopBottomClose
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationNoAnimationDissmiss:) name:kFSJPopBottomCloseDoneNoAnimationPressed object:nil];
 }
 
+- (void)setHiddenNumY:(NSNumber *)hiddenNumY {
+    _hiddenNumY = hiddenNumY;
+    
+    CGRect subRect = self.subView.frame;
+    subRect.origin.y = hiddenNumY.floatValue;
+    self.subView.frame = subRect;
+}
+
 - (UIView *)bgView {
     if (!_bgView) {
         _bgView = [[UIView alloc] initWithFrame:self.bounds];
@@ -94,11 +102,23 @@ NSString * const kFSJPopBottomCloseDoneNoAnimationPressed = @"kFSJPopBottomClose
     
     __weak typeof (self) wSelf = self;
     CGRect subRect = self.subView.frame;
-    subRect.origin.y = self.frame.size.height-subRect.size.height;
+    if (self.showNumY) {
+        subRect.origin.y = self.showNumY.floatValue;
+    }else {
+        subRect.origin.y = self.frame.size.height-subRect.size.height;
+    }
+    
     if (animated) {
-        [UIView animateWithDuration:0.25 animations:^{
-            [wSelf.subView setFrame:subRect];
-        }];
+        if (self.showAnimationBlock) {
+            self.showAnimationBlock(^{
+                [wSelf.subView setFrame:subRect];
+            });
+        }else {
+            // 默认动画
+            [UIView animateWithDuration:0.25 animations:^{
+                [wSelf.subView setFrame:subRect];
+            }];
+        }
     }else {
         [self.subView setFrame:subRect];
     }
@@ -121,18 +141,34 @@ NSString * const kFSJPopBottomCloseDoneNoAnimationPressed = @"kFSJPopBottomClose
 - (void)dissmiss:(BOOL)animated {
     __weak typeof (self) wSelf = self;
     CGRect subRect = self.subView.frame;
-    subRect.origin.y = self.frame.size.height;
+    if (self.hiddenNumY) {
+        subRect.origin.y = self.hiddenNumY.floatValue;
+    }else {
+        subRect.origin.y = self.frame.size.height;
+    }
     if (animated) {
-        [UIView animateWithDuration:0.25 animations:^{
-            [wSelf.subView setFrame:subRect];
-        } completion:^(BOOL finished) {
-            if (![wSelf removeLastPopoverView]) {
-                wSelf.super_view = nil;
-            }
-            if (self.closeBlock) {
-                self.closeBlock();
-            }
-        }];
+        if (self.hiddenAnimationBlock) {
+            self.hiddenAnimationBlock(^{
+                [wSelf.subView setFrame:subRect];
+                if (![wSelf removeLastPopoverView]) {
+                    wSelf.super_view = nil;
+                }
+                if (self.closeBlock) {
+                    self.closeBlock();
+                }
+            });
+        }else {
+            [UIView animateWithDuration:0.25 animations:^{
+                [wSelf.subView setFrame:subRect];
+            } completion:^(BOOL finished) {
+                if (![wSelf removeLastPopoverView]) {
+                    wSelf.super_view = nil;
+                }
+                if (self.closeBlock) {
+                    self.closeBlock();
+                }
+            }];
+        }
     }else {
         [self.subView setFrame:subRect];
         if (![self removeLastPopoverView]) {

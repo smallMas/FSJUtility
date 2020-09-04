@@ -16,6 +16,8 @@ extern NSString * _Nonnull const kFSJPopBottomCloseDonePressed;
 extern NSString * _Nonnull const kFSJPopBottomCloseDoneNoAnimationPressed;
 
 typedef void (^ FSJPopCloseBlock) (void);
+typedef void (^ FSJVoidBlock)(void);
+typedef void (^ FSJPopAnimationBlock) (FSJVoidBlock block);
 
 @interface FSJPopBottomContainerView : UIView
 
@@ -27,6 +29,16 @@ typedef void (^ FSJPopCloseBlock) (void);
 
 // sub view
 @property (nonatomic, strong, readonly) UIView *subView;
+
+// 显示动画
+@property (nonatomic, copy) FSJPopAnimationBlock showAnimationBlock;
+// 消失动画
+@property (nonatomic, copy) FSJPopAnimationBlock hiddenAnimationBlock;
+
+// 显示时，subView显示的y位置
+@property (nonatomic, strong) NSNumber *showNumY;
+// 隐藏时，subView显示的y位置
+@property (nonatomic, strong) NSNumber *hiddenNumY;
 
 /*!
  * 初始化底部弹框容器

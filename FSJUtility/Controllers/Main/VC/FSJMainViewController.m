@@ -16,6 +16,8 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
     FSJMenuTypeTestBottom,
     FSJMenuTypeTestTabContain,
     FSJMenuTypeTestArea,
+    FSJMenuTypeTestTask,
+    FSJMenuTypeTestAnimation,
 };
 
 @interface FSJMainViewController ()
@@ -64,6 +66,8 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
     [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestBottom title:@"测试底部弹框" clsString:nil]];
     [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestTabContain title:@"测试TabContain" clsString:@"TestTabContainViewController"]];
     [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestArea title:@"测试view点击区域" clsString:@"TestClickAreaController"]];
+    [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestTask title:@"测试任务" clsString:@"FSJTestTaskController"]];
+    [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestAnimation title:@"测试动画" clsString:@"FSJTestAnimationController"]];
 }
 
 - (FSJMenuModel *)createMenuType:(FSJMenuType)type title:(NSString *)title clsString:(NSString *)clsString {
@@ -129,7 +133,43 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
         }
         return nil;
     };
-    FSJPopBottomContainerView *bottomView = [[FSJPopBottomContainerView alloc] initWithSuperView:self.view withView:view];
+    
+    UIView *superView = [UIApplication sharedApplication].keyWindow;
+    FSJPopBottomContainerView *bottomView = [[FSJPopBottomContainerView alloc] initWithSuperView:superView withView:view];
+    bottomView.backViewColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    bottomView.showNumY = @((superView.bounds.size.height - view.bounds.size.height)*0.5);
+    bottomView.hiddenNumY = @(-view.bounds.size.height);
+    
+//    __weak typeof (bottomView) wBottomView = bottomView;
+//    CGSize originalSize = view.bounds.size;
+//    [bottomView setShowAnimationBlock:^(FSJVoidBlock  _Nonnull block) {
+//        CGSize size = CGSizeMake(100, 100);
+//        CGRect rect1 = wBottomView.superview.frame;
+//        rect1.size = size;
+//        rect1.origin.x = (superView.bounds.size.width - size.width)*0.5;
+//        rect1.origin.y = (superView.bounds.size.height - size.height)*0.5;
+//        [wBottomView.subView setFrame:rect1];
+//
+//        NSLog(@"rect1 >>> %@",NSStringFromCGRect(rect1));
+//
+//        [UIView animateWithDuration:01.25 animations:^{
+//            NSLog(@"--------1");
+//            CGRect rect2 = wBottomView.superview.frame;
+//            rect2.size = originalSize;
+//            rect2.origin.x = (superView.bounds.size.width - originalSize.width)*0.5;
+//            rect2.origin.y = (superView.bounds.size.height - originalSize.height)*0.5;
+//            [wBottomView.subView setFrame:rect2];
+//        } completion:^(BOOL finished) {
+//            NSLog(@"--------2");
+//            if (block) {
+//                block();
+//            }
+//        }];
+//    }];
+//
+//    [bottomView setHiddenAnimationBlock:^(FSJVoidBlock  _Nonnull block) {
+//        block();
+//    }];
     [bottomView show:YES];
 }
 
