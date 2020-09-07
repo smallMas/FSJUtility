@@ -37,7 +37,7 @@
         self.collectionView.collectionViewDidSelectItemAtIndexPathBlock = ^(UICollectionView *collectionView, NSIndexPath *indexPath, id itemData) {
             FSJ_STRONG_SELF
             FSJMenuModel *model = itemData;
-            [self.centerView transitionAnimationType:model.type subType:FSJTransitionSubTypeLeft];
+            [self.centerView fsj_transitionAnimationType:model.type subType:FSJTransitionSubTypeLeft];
         };
     }
     

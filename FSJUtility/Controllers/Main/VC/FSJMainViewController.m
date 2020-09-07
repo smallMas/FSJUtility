@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
     FSJMenuTypeTestArea,
     FSJMenuTypeTestTask,
     FSJMenuTypeTestAnimation,
+    FSJMenuTypeTestSafeUI,
 };
 
 @interface FSJMainViewController ()
@@ -59,6 +60,32 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
             }
         }
     };
+    
+    NSLog(@"size >>> %@",NSStringFromUIEdgeInsets(self.view.safeAreaInsets));
+}
+
+- (void)viewSafeAreaInsetsDidChange {
+    [super viewSafeAreaInsetsDidChange];
+    NSLog(@"%s",__FUNCTION__);
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    NSLog(@"%s",__FUNCTION__);
+    NSLog(@"size2 >>> %@",NSStringFromUIEdgeInsets(self.view.safeAreaInsets));
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"%s",__FUNCTION__);
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"%s",__FUNCTION__);
+    
+    
+    CGFloat top = [[UIDevice currentDevice] safeTopH];
+    CGFloat bottom = [[UIDevice currentDevice] safeBottomH];
+    NSLog(@"top >>> %f bottom >>> %f",top,bottom);
 }
 
 - (void)setupData {
@@ -68,6 +95,7 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
     [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestArea title:@"测试view点击区域" clsString:@"TestClickAreaController"]];
     [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestTask title:@"测试任务" clsString:@"FSJTestTaskController"]];
     [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestAnimation title:@"测试动画" clsString:@"FSJTestAnimationController"]];
+    [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestSafeUI title:@"测试安全区域" clsString:@"FSJTestSafeController"]];
 }
 
 - (FSJMenuModel *)createMenuType:(FSJMenuType)type title:(NSString *)title clsString:(NSString *)clsString {

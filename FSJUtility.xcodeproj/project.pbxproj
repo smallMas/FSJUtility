@@ -10,6 +10,8 @@
 		BCC961C777548CA02F45CE5E /* Pods_FSJUtility_FSJUtilityUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD1D022B0D1C83021C5E877 /* Pods_FSJUtility_FSJUtilityUITests.framework */; };
 		C0BBA7C50F97CA3A9B193F65 /* Pods_FSJUtilityTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A7DBAC22394FBC1EC46A88B /* Pods_FSJUtilityTests.framework */; };
 		E93334BE25007E8D00748E2B /* TestClickAreaController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93334BD25007E8D00748E2B /* TestClickAreaController.m */; };
+		E966ED682506028300021EB4 /* UIDevice+FSJUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E966ED672506028300021EB4 /* UIDevice+FSJUtility.m */; };
+		E966ED6C2506087500021EB4 /* FSJTestSafeController.m in Sources */ = {isa = PBXBuildFile; fileRef = E966ED6B2506087500021EB4 /* FSJTestSafeController.m */; };
 		E97729EA250085E90043339C /* FSJTapAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = E97729E9250085E90043339C /* FSJTapAreaView.m */; };
 		E97729F3250088F00043339C /* UIControl+FSJEffectiveArea.m in Sources */ = {isa = PBXBuildFile; fileRef = E97729F2250088F00043339C /* UIControl+FSJEffectiveArea.m */; };
 		E97729F625008B630043339C /* UIImageView+FSJEffectiveArea.m in Sources */ = {isa = PBXBuildFile; fileRef = E97729F525008B630043339C /* UIImageView+FSJEffectiveArea.m */; };
@@ -91,6 +93,10 @@
 		8360AB2835F9317EF851AD83 /* Pods-FSJUtility.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSJUtility.release.xcconfig"; path = "Target Support Files/Pods-FSJUtility/Pods-FSJUtility.release.xcconfig"; sourceTree = "<group>"; };
 		E93334BC25007E8D00748E2B /* TestClickAreaController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestClickAreaController.h; sourceTree = "<group>"; };
 		E93334BD25007E8D00748E2B /* TestClickAreaController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestClickAreaController.m; sourceTree = "<group>"; };
+		E966ED662506028300021EB4 /* UIDevice+FSJUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+FSJUtility.h"; sourceTree = "<group>"; };
+		E966ED672506028300021EB4 /* UIDevice+FSJUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+FSJUtility.m"; sourceTree = "<group>"; };
+		E966ED6A2506087500021EB4 /* FSJTestSafeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSJTestSafeController.h; sourceTree = "<group>"; };
+		E966ED6B2506087500021EB4 /* FSJTestSafeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSJTestSafeController.m; sourceTree = "<group>"; };
 		E97729E8250085E90043339C /* FSJTapAreaView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSJTapAreaView.h; sourceTree = "<group>"; };
 		E97729E9250085E90043339C /* FSJTapAreaView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSJTapAreaView.m; sourceTree = "<group>"; };
 		E97729F1250088F00043339C /* UIControl+FSJEffectiveArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+FSJEffectiveArea.h"; sourceTree = "<group>"; };
@@ -247,6 +253,7 @@
 		E93334BA25007E7500748E2B /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				E966ED692506085C00021EB4 /* TestSafeUI */,
 				E9772A152501CBDE0043339C /* TestAnimation */,
 				E9772A062500E6260043339C /* TestTask */,
 				E93334BB25007E7500748E2B /* TestClickArea */,
@@ -261,6 +268,15 @@
 				E93334BD25007E8D00748E2B /* TestClickAreaController.m */,
 			);
 			path = TestClickArea;
+			sourceTree = "<group>";
+		};
+		E966ED692506085C00021EB4 /* TestSafeUI */ = {
+			isa = PBXGroup;
+			children = (
+				E966ED6A2506087500021EB4 /* FSJTestSafeController.h */,
+				E966ED6B2506087500021EB4 /* FSJTestSafeController.m */,
+			);
+			path = TestSafeUI;
 			sourceTree = "<group>";
 		};
 		E97729E7250085D00043339C /* TapAreaView */ = {
@@ -426,6 +442,8 @@
 				E97729F2250088F00043339C /* UIControl+FSJEffectiveArea.m */,
 				E97729F425008B630043339C /* UIImageView+FSJEffectiveArea.h */,
 				E97729F525008B630043339C /* UIImageView+FSJEffectiveArea.m */,
+				E966ED662506028300021EB4 /* UIDevice+FSJUtility.h */,
+				E966ED672506028300021EB4 /* UIDevice+FSJUtility.m */,
 			);
 			path = UIUtility;
 			sourceTree = "<group>";
@@ -857,6 +875,7 @@
 				E97729F625008B630043339C /* UIImageView+FSJEffectiveArea.m in Sources */,
 				E998956124E3F69100946D6E /* FSJMenuTableCell.m in Sources */,
 				E9772A0D2500E6780043339C /* FSJTestDelayTask.m in Sources */,
+				E966ED6C2506087500021EB4 /* FSJTestSafeController.m in Sources */,
 				E9922DAF24DD385700F2D197 /* UIViewController+FSJUtility.m in Sources */,
 				E9922DA824DD385700F2D197 /* NSString+FSJUtility.m in Sources */,
 				E9772A182501CC0B0043339C /* FSJTestAnimationController.m in Sources */,
@@ -866,6 +885,7 @@
 				E9922D3E24DD095500F2D197 /* FSJUtility.xcdatamodeld in Sources */,
 				E9922DAE24DD385700F2D197 /* UIView+FSJUtility.m in Sources */,
 				E998955524E3F46E00946D6E /* FSJBaseController.m in Sources */,
+				E966ED682506028300021EB4 /* UIDevice+FSJUtility.m in Sources */,
 				E9F1DDA324EE71CF0099947C /* FSJTabMenuView.m in Sources */,
 				E9922DAB24DD385700F2D197 /* UIColor+FSJUtility.m in Sources */,
 				E9772A052500E42A0043339C /* FSJDelayTask.m in Sources */,

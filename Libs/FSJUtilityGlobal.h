@@ -16,6 +16,7 @@
 #import "NSString+FSJUtility.h"
 #import "NSTimer+FSJUtility.h"
 
+#import "UIDevice+FSJUtility.h"
 #import "UIButton+FSJUtility.h"
 #import "UIColor+FSJUtility.h"
 #import "UIImage+FSJUtility.h"

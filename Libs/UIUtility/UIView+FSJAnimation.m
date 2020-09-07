@@ -79,7 +79,7 @@
 }
 
 #pragma mark - 转场动画
-- (void)transitionAnimationTypeString:(NSString *)typeString subTypeString:(NSString *)subTypeString {
+- (void)fsj_transitionAnimationTypeString:(NSString *)typeString subTypeString:(NSString *)subTypeString {
     //- 创建一个转场动画:
     CATransition *transition = [CATransition animation];
     transition.repeatCount = 1;
@@ -95,7 +95,7 @@
     [self.layer addAnimation:transition forKey:nil];
 }
 
-- (void)transitionAnimationType:(FSJTransitionType)type subType:(FSJTransitionSubType)subType {
+- (void)fsj_transitionAnimationType:(FSJTransitionType)type subType:(FSJTransitionSubType)subType {
     NSString *typeStr = [self stringWithTransitionType:type];
     NSString *subStr = [self subStringWithType:subType];
     if (type == FSJTransitionTypeRippleEffect ||
@@ -104,7 +104,7 @@
         type == FSJTransitionTypeCameraIrisHollowClose) {
         subStr = nil;
     }
-    [self transitionAnimationTypeString:typeStr subTypeString:subStr];
+    [self fsj_transitionAnimationTypeString:typeStr subTypeString:subStr];
 }
 
 - (NSString *)stringWithTransitionType:(FSJTransitionType)type {

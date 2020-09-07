@@ -31,6 +31,16 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param backGroundColor 背景颜色
 + (UIImage *)fsj_generateBarCode:(NSString *)code size:(CGSize)size color:(UIColor *)color backGroundColor:(UIColor *)backGroundColor;
 
+#pragma mark - 裁剪
+/// 获取圆形图片
+- (UIImage *)fsj_clipCircularImage;
+
+/// 获得裁剪后的图片
++ (UIImage *)fsj_cropImageView:(UIImageView *)imageView
+                        toRect:(CGRect)rect
+                     zoomScale:(double)zoomScale
+                 containerView:(UIView *)containerView;
+
 @end
 
 NS_ASSUME_NONNULL_END

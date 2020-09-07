@@ -65,12 +65,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 转场动画
 /// @param typeString 转场类型字符串
 /// @param subTypeString 子类型字符串(方向等)
-- (void)transitionAnimationTypeString:(NSString *)typeString subTypeString:(NSString * __nullable)subTypeString;
+- (void)fsj_transitionAnimationTypeString:(NSString *)typeString subTypeString:(NSString * __nullable)subTypeString;
 
 /// 转场动画
 /// @param type 转场类型
 /// @param subType 子类型(方向等)
-- (void)transitionAnimationType:(FSJTransitionType)type subType:(FSJTransitionSubType)subType;
+- (void)fsj_transitionAnimationType:(FSJTransitionType)type subType:(FSJTransitionSubType)subType;
 
 @end
 
