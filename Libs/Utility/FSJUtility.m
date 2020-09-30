@@ -73,4 +73,20 @@
     return [self fsj_stringForDate:date dateFormattor:dateFormatter];
 }
 
+#pragma mark - emoji
+- (NSString *)fsj_emojiFlagForISOCountryCode:(NSString *)countryCode {
+    NSString *code = countryCode;
+    NSAssert(code.length == 2, @"Expecting ISO country code");
+
+    int base = 127462 -65;
+
+    wchar_t bytes[2] = {
+        base +[code characterAtIndex:0],
+        base +[code characterAtIndex:1]
+    };
+
+    return [[NSString alloc] initWithBytes:bytes
+                                    length:code.length *sizeof(wchar_t)
+                                  encoding:NSUTF32LittleEndianStringEncoding];
+}
 @end

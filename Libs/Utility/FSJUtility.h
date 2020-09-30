@@ -30,6 +30,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 时间戳 转 时间字符串
 + (NSString *)fsj_stringForStamp:(NSString *)timeStamp dateFormattor:(NSString *)dateFormatter;
 
+#pragma mark - emoji
+/// 根据国家代码获取国旗emoji （注意:台湾的表情可能没有）
+- (NSString *)fsj_emojiFlagForISOCountryCode:(NSString *)countryCode;
+
 @end
 
 NS_ASSUME_NONNULL_END
