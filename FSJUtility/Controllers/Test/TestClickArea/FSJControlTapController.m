@@ -45,9 +45,10 @@
 //            make.top.mas_equalTo(self.view);
 //        }
         
-        make.top.mas_equalTo(self.view).inset(FSJAppSafeTopH);
+//        make.top.mas_equalTo(self.view).inset(FSJAppSafeTopH);
         make.left.right.mas_equalTo(self.view);
         make.height.mas_equalTo(50);
+        make.bottom.mas_equalTo(self.view).inset(FSJAppSafeBottomH);
     }];
 }
 

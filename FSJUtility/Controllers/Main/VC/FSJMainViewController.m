@@ -65,8 +65,6 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
             }
         }
     };
-    
-    NSLog(@"size >>> %@",NSStringFromUIEdgeInsets(self.view.safeAreaInsets));
 }
 
 - (void)viewSafeAreaInsetsDidChange {
@@ -77,7 +75,6 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     NSLog(@"%s",__FUNCTION__);
-    NSLog(@"size2 >>> %@",NSStringFromUIEdgeInsets(self.view.safeAreaInsets));
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
