@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
     FSJMenuTypeTestBottom,
     FSJMenuTypeTestTabContain,
     FSJMenuTypeTestArea,
+    FSJMenuTypeTestControlTap,
     FSJMenuTypeTestTask,
     FSJMenuTypeTestAnimation,
     FSJMenuTypeTestSafeUI,
@@ -93,6 +94,7 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
     [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestBottom title:@"测试底部弹框" clsString:nil]];
     [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestTabContain title:@"测试TabContain" clsString:@"TestTabContainViewController"]];
     [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestArea title:@"测试view点击区域" clsString:@"TestClickAreaController"]];
+    [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestControlTap title:@"测试防止重复点击" clsString:@"FSJControlTapController"]];
     [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestTask title:@"测试任务" clsString:@"FSJTestTaskController"]];
     [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestAnimation title:@"测试动画" clsString:@"FSJTestAnimationController"]];
     [self.dataArray addObject:[self createMenuType:FSJMenuTypeTestSafeUI title:@"测试安全区域" clsString:@"FSJTestSafeController"]];

@@ -8,8 +8,32 @@
 
 #import "UIControl+FSJEffectiveArea.h"
 #import <objc/runtime.h>
+#import "FSJSwizziedMethod.h"
+
+@interface UIControl ()
+
+@property (nonatomic, assign) BOOL fsj_eventUnavailable;
+
+@end
 
 @implementation UIControl (FSJEffectiveArea)
+
++ (void)load {
+    FSJ_SwizzleMethod([self class], @selector(sendAction:to:forEvent:), [self class], @selector(fsj_sendAction:to:forEvent:));
+}
+
+- (void)fsj_sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {
+    if([self isMemberOfClass:[UIButton class]]) {
+        if (self.fsj_eventUnavailable == NO) {
+              self.fsj_eventUnavailable = YES;
+              [self fsj_sendAction:action to:target forEvent:event];
+              [self performSelector:@selector(setFsj_eventUnavailable:) withObject:0           afterDelay:self.fsj_eventInterval];
+        }
+   } else {
+        [self fsj_sendAction:action to:target forEvent:event];
+    }
+}
+
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
     [super pointInside:point withEvent:event];
     //获取bounds 实际大小
@@ -31,6 +55,22 @@
 
 - (NSString *)fsj_clickArea {
     return objc_getAssociatedObject(self, @selector(fsj_clickArea));
+}
+
+- (void)setFsj_eventInterval:(NSTimeInterval)fsj_eventInterval {
+    objc_setAssociatedObject(self, @selector(fsj_eventInterval), @(fsj_eventInterval), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSTimeInterval)fsj_eventInterval {
+    return [objc_getAssociatedObject(self, @selector(fsj_eventInterval)) doubleValue];
+}
+
+- (void)setFsj_eventUnavailable:(BOOL)fsj_eventUnavailable {
+    objc_setAssociatedObject(self, @selector(fsj_eventUnavailable), @(fsj_eventUnavailable), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (BOOL)fsj_eventUnavailable {
+    return [objc_getAssociatedObject(self, @selector(fsj_eventUnavailable)) boolValue];
 }
 
 @end

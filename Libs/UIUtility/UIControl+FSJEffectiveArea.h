@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 扩大按钮热区的比例系数(曲线救国)
 @property (nonatomic, copy) NSString *fsj_clickArea;
+
+// 按钮响应间隔时间(防重复点击)
+@property (nonatomic, assign) NSTimeInterval fsj_eventInterval;
+
 @end
 
 NS_ASSUME_NONNULL_END

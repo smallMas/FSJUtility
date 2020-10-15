@@ -32,6 +32,7 @@
 #import "FSJUtility.h"
 #import "FSJAlertSheetView.h"
 #import "FSJDelayTask.h"
+#import "FSJSwizziedMethod.h"
 
 // 自定义view
 #import "FSJPopBottomContainerView.h"
