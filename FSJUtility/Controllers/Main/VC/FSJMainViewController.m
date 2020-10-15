@@ -32,6 +32,10 @@ typedef NS_ENUM(NSInteger, FSJMenuType) {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    NSLog(@"main status height %f",FSJAppStatusHeight);
+    NSLog(@"main safe top h : %f",FSJAppSafeTopH);
+    
     [self setupData];
     self.tableView.tableViewAdapter.headerHeight = 0.0001;
     self.tableView.tableViewAdapter.footerHeight = 0.0001;

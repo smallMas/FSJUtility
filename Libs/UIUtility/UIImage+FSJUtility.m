@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+FSJUtility.h"
+#import "UIView+FSJUtility.h"
 
 @implementation UIImage (FSJUtility)
 
