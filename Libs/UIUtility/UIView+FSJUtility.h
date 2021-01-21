@@ -57,6 +57,10 @@ typedef NS_OPTIONS(NSUInteger, FSJBorderSideType) {
 /// 动画旋转次数
 - (void)fsj_rotationDuration:(CGFloat)duration from:(CGFloat)fromf to:(CGFloat)tof repeatCount:(float)repeatCount;
 
+#pragma mark - 获取
+// 获取当前controller
+- (UIViewController *)fsj_viewController;
+
 @end
 
 NS_ASSUME_NONNULL_END

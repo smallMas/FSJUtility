@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIApplication (FSJUtility)
 
+// 获取当前活动controller
 - (UIViewController *)fsj_activityViewController;
 
 @end
