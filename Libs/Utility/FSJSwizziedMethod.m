@@ -23,18 +23,18 @@ void FSJ_SwizzleMethod(Class originalClass, SEL originalSelector, Class swizzled
     }
 }
 
-void FSJ_SwizzleMethod2(Class class, SEL originalSelector, SEL swizzledSelector)
+void FSJ_SwizzleMethod2(Class classStr, SEL originalSelector, SEL swizzledSelector)
 {
     // the method might not exist in the class, but in its superclass
-    Method originalMethod = class_getInstanceMethod(class, originalSelector);
-    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+    Method originalMethod = class_getInstanceMethod(classStr, originalSelector);
+    Method swizzledMethod = class_getInstanceMethod(classStr, swizzledSelector);
     
     // class_addMethod will fail if original method already exists
-    BOOL didAddMethod = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
+    BOOL didAddMethod = class_addMethod(classStr, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
     
     // the method doesn’t exist and we just added one
     if (didAddMethod) {
-        class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+        class_replaceMethod(classStr, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
     }
     else {
         method_exchangeImplementations(originalMethod, swizzledMethod);

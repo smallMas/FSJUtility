@@ -20,7 +20,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 void FSJ_SwizzleMethod(Class originalClass, SEL originalSelector, Class swizzledClass,SEL swizzledSelector);
-void FSJ_SwizzleMethod2(Class class, SEL originalSelector, SEL swizzledSelector); // 同一个Class
+void FSJ_SwizzleMethod2(Class classStr, SEL originalSelector, SEL swizzledSelector); // 同一个Class
 
 @interface FSJSwizziedMethod : NSObject
 

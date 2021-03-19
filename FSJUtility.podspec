@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FSJUtility'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = '这里总结了一些实用的工具，比如扩大按钮的点击区域，防止重复点击按钮，json转换，字母排序，序列化归档，AES base64 MD5，手机号正则，创建UI的快捷方式，16进制颜色转换，二维码生成，View的圆角，一些简单动画，底部弹框 弹框集合，包含ChildController的容器，方法交换，延迟操作 取消操作 等等'
 
 # This description is used to generate tags and improve search results.
