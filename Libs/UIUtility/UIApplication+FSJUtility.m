@@ -7,6 +7,7 @@
 //
 
 #import "UIApplication+FSJUtility.h"
+#import "FSJFrameMacro.h"
 
 @implementation UIApplication (FSJUtility)
 
