@@ -6,10 +6,24 @@
 //  Copyright © 2020 燕来秋. All rights reserved.
 //  https://www.apple.com.cn/iphone/compare/?device1=iphone11promax&device2=iphone11pro&device3=iphoneXS
 
+#define FSJ_Window \
+({UIWindow *window = nil;\
+if (@available(iOS 13.0, *)) {\
+    for (UIWindowScene* windowScene in [UIApplication sharedApplication].connectedScenes) {\
+        if (windowScene.activationState == UISceneActivationStateForegroundActive) {\
+            window = windowScene.windows.firstObject;\
+            break;\
+        }\
+    }\
+}else {\
+    window = [[UIApplication sharedApplication].delegate window];\
+}\
+(window);})
+
 #define FSJSafeAreaEdgeInsets \
 ({UIEdgeInsets safeEdgeInsets = UIEdgeInsetsZero;\
 if (@available(iOS 11.0, *)) {\
-safeEdgeInsets = [[UIApplication sharedApplication] delegate].window.safeAreaInsets;\
+safeEdgeInsets = FSJ_Window.safeAreaInsets;\
 }\
 (safeEdgeInsets);})
 
