@@ -12,6 +12,7 @@
 @implementation UIApplication (FSJUtility)
 
 - (UIViewController *)fsj_activityViewController {
+    
     __block UIWindow *normalWindow = FSJ_Window;
     if (normalWindow.windowLevel != UIWindowLevelNormal) {
         [self.windows enumerateObjectsUsingBlock:^(__kindof UIWindow * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

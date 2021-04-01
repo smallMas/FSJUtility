@@ -80,6 +80,7 @@
 #pragma mark - EVENT
 - (void)clickTap:(id)sender {
     NSLog(@"%s",__FUNCTION__);
+    [[UIApplication sharedApplication] fsj_activityViewController];
 }
 
 - (void)clickTap2:(id)sender {
