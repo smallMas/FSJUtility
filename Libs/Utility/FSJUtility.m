@@ -89,4 +89,24 @@
                                     length:code.length *sizeof(wchar_t)
                                   encoding:NSUTF32LittleEndianStringEncoding];
 }
+
+#pragma mark - 计算
++ (CGRect)fsj_calculateRectWithAtt:(NSAttributedString *)att size:(CGSize)size {
+    if (att) {
+        CGRect rect = [att boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
+        return rect;
+    }
+    return CGRectZero;
+}
+
++ (CGFloat)fsj_calculateHeightWithAtt:(NSAttributedString *)att size:(CGSize)size {
+    CGRect rect = [self fsj_calculateRectWithAtt:att size:size];
+    return ceil(rect.size.height);
+}
+
++ (CGFloat)fsj_calculateWidthWithAtt:(NSAttributedString *)att size:(CGSize)size {
+    CGRect rect = [self fsj_calculateRectWithAtt:att size:size];
+    return ceil(rect.size.width);
+}
+
 @end

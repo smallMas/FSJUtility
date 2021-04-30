@@ -46,6 +46,25 @@
              ] lowercaseString];
 }
 
+/// AES随机生成密钥
+- (NSString *)fsj_randomlyAES16BitString {
+    NSString *string = [[NSString alloc]init];
+    for (int i = 0; i < 16; i++) {
+        int number = arc4random() % 36;
+        if (number < 10) {
+            int figure = arc4random() % 10;
+            NSString *tempString = [NSString stringWithFormat:@"%d", figure];
+            string = [string stringByAppendingString:tempString];
+        }else {
+            int figure = (arc4random() % 26) + 97;
+            char character = figure;
+            NSString *tempString = [NSString stringWithFormat:@"%c", character];
+            string = [string stringByAppendingString:tempString];
+        }
+    }
+    return  string;
+}
+
 /// AES128位加密
 - (NSString *)fsj_AES128EncryptKey:(NSString *)key {
     return [self fsj_AESEncryptKey:key kCCKeySize:kCCKeySizeAES128];

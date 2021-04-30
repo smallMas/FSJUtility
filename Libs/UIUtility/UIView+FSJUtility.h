@@ -46,6 +46,12 @@ typedef NS_OPTIONS(NSUInteger, FSJBorderSideType) {
 /// view截屏
 - (UIImage*)fsj_snapshot;
 
+/// 添加阴影，注意如果设置了masksToBounds为YES，那么阴影不会生效
+- (void)fsj_addShadowC:(UIColor *)color
+                offset:(CGSize)offset
+               opacity:(CGFloat)opacity
+                radius:(CGFloat)radius;
+
 #pragma mark - 动画
 /// 缩放抖动动画
 - (void)fsj_startScaleAnimationFinishBlock:(void (^)(void))block;

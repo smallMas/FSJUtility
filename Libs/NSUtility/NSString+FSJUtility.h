@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)fsj_MD5_32;
 /// md5 16位
 - (NSString *)fsj_MD5_16;
+/// AES随机生成16位字符串密钥
+- (NSString *)fsj_randomlyAES16BitString;
 /// AES128位加密
 - (NSString *)fsj_AES128EncryptKey:(NSString *)key;
 /// AES128位解密

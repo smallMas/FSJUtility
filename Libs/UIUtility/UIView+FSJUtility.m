@@ -195,6 +195,17 @@
     return snapshotImage;
 }
 
+/// 添加阴影，注意如果设置了masksToBounds为YES，那么阴影不会生效
+- (void)fsj_addShadowC:(UIColor *)color
+                offset:(CGSize)offset
+               opacity:(CGFloat)opacity
+                radius:(CGFloat)radius {
+    self.layer.shadowColor = color.CGColor;
+    self.layer.shadowOffset = offset;
+    self.layer.shadowOpacity = opacity;
+    self.layer.shadowRadius = radius;
+}
+
 #pragma mark - 动画
 // 缩放抖动动画
 - (void)fsj_startScaleAnimationFinishBlock:(void (^)(void))block {

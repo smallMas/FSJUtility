@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -33,6 +34,11 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - emoji
 /// 根据国家代码获取国旗emoji （注意:台湾的表情可能没有）
 - (NSString *)fsj_emojiFlagForISOCountryCode:(NSString *)countryCode;
+
+#pragma mark - 计算
++ (CGRect)fsj_calculateRectWithAtt:(NSAttributedString *)att size:(CGSize)size;
++ (CGFloat)fsj_calculateHeightWithAtt:(NSAttributedString *)att size:(CGSize)size;
++ (CGFloat)fsj_calculateWidthWithAtt:(NSAttributedString *)att size:(CGSize)size;
 
 @end
 
